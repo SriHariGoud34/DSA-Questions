@@ -21,5 +21,106 @@ print(ans)
 arr =  [10, 20, 30, 40, 50]
 ans = [arr[i] for i in range(0,len(arr),2)] # using List comprehension
 print(ans)
+
+
+2. Linear Search Algorithm
+-Given an array, arr of n integers, and an integer element x, find whether element x is present in the array. Return the index of the first occurrence of x in the array, or -1 if it doesn’t exist.
+
+# m - 1 (best)
+
+def num(arr,x):
+  for i in range(len(arr)):
+    if arr[i] == x:
+      return i
+  return -1  
+arr = [1, 2, 3, 4] 
+x = 3
+print(num(arr,x))
+
+""" Linear Search Algorithm
+    Returns the index of the target if found, else -1.
+    Time Complexity: O(n)
+    Space Complexity: O(1)
+"""
+# m - 2
+arr = [1, 2, 3, 3, 4] 
+x = 3
+print(arr.index(x)) 
+
+3. Largest element in an Array
+
+# m - 1
+arr = [10, 20, 4,21]
+max = arr[0]
+for i in range(1, len(arr)):
+  if arr[i] > max:   (best t:-o(n) s:-o(1))
+    max = arr[i]
+print(max)
+
+# m -2
+import heapq
+arr = [10, 20, 4,21]
+max = heapq.nlargest(1,arr)
+print(max)
+
+# m - 3
+using math.max function
+
+# m - 4
+arr = [10, 20, 4,21]
+arr.sort()
+print(arr[-1])  # using sort and index 
+
+4. Second Largest Element in an Array
+
+# m - 1
+arr = [12, 35, 1, 10, 34, 1]
+
+first = second = float('-inf')
+
+for num in arr:
+    if num > first:
+        second = first  ( best)
+        first = num
+    elif first > num > second:
+        second = num
+
+print("Max:", first)
+print("Second Max:", second if second != float('-inf') else "Not found")
+
+# m - 2
+arr = [12, 35, 1, 10, 34, 1]
+max = arr[0]
+sec_max = arr[0]
+for i in range(1,len(arr)):
+  if arr[i] > max:
+    max = arr[i]
+  if arr[i] > sec_max and arr[i] != max:
+    sec_max = arr[i]
+print('max ',max)
+print('min ', sec_max)
+
+# m - 3
+arr = [12, 35, 1, 10, 34, 1]
+arr.sort()
+print(arr[-2])
+
+# m - 4
+arr = [12, 35, 1, 10, 34, 1]
+max = max(arr)
+arr.remove(max)
+print(max(arr))
+
+# m - 5
+import heapq
+arr = [12, 35, 1, 10, 34, 1]
+sec_max = heapq.nlargest(2,arr)[1]
+print(sec_max)
+
+
+
+
+
+
  
 
