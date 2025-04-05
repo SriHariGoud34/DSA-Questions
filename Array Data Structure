@@ -1,0 +1,25 @@
+Basic Problems on Array:
+
+1. Alternate elements of an array
+
+# m - 1
+arr =  [10, 20, 30, 40, 50]
+print(arr[::2]) # step index it will create a new list
+
+# m - 2
+arr =  [10, 20, 30, 40, 50]
+for i in range(0,len(arr),2): # using step index ( best - in place) with out new array or variable space is o(1) only
+  print(arr[i],end=" ")
+
+# m - 3
+arr =  [10, 20, 30, 40, 50]
+ans = [arr[i] for i in range(len(arr)) if i % 2 == 0] # using even or odd logic
+print(ans)
+
+
+# m - 4
+arr =  [10, 20, 30, 40, 50]
+ans = [arr[i] for i in range(0,len(arr),2)] # using List comprehension
+print(ans)
+ 
+
